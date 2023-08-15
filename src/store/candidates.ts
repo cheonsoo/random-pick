@@ -1,3 +1,4 @@
 import { writable } from 'svelte/store';
+// import { type ICandidate } from '@/types';
 
-export const candidates = writable([]);
+export let candidates = writable([]);

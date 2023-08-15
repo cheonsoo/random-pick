@@ -23,18 +23,14 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Item from '@/components/Item/Item.svelte';
   import CandidatesComponent from '@/components//Candidates/Candidates.svelte';
+  import Item from '@/components/Item/Item.svelte';
 
   import { candidates } from '@/store/candidates';
   import { openAddItemFlg } from '@/store/modal';
 
-  interface ICandidate {
-    k: number;
-    v: string;
-  };
-
-  interface ICandidates extends Array<ICandidate>{};
+  import { type ICandidates } from '@/types';
+  import type { MouseEventHandler } from 'svelte/elements';
 
   let show: boolean = false;
   let showBtns: boolean = true;
@@ -75,7 +71,7 @@
     console.table($candidates);
   });
 
-  function init() {
+  function init(): void {
     window.localStorage.setItem('prev-items', JSON.stringify($candidates));
 
     const items: string[] = $candidates.map(item => item.v);
@@ -112,14 +108,14 @@
     });
   }
 
-  function shuffle([ ...arr ]) {
+  function shuffle([ ...arr ]): string[] {
     return arr.sort(() => Math.random() - 0.5);
   }
 
-  function roll() {
+  function roll(): boolean {
     if ($candidates.length < 2) {
       alert('Please add items');
-      return;
+      return false;
     }
 
     init();
@@ -132,12 +128,12 @@
     }, 100);
   }
 
-  function addItem(event: any) {
+  function addItem(event: any): void {
     event.stopPropagation();
     $openAddItemFlg = true;
   }
 
-  function clearAllItems(event: any) {
+  function clearAllItems(event: any): void {
     event.stopPropagation();
     $candidates = [];
   }

@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   export let show = false;
 	import Modal from '@/components/Modal/Modal.svelte';
 
-	let showModal = false;
+	let showModal: boolean = false;
 </script>
 
 {#if show}

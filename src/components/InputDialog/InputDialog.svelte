@@ -2,16 +2,17 @@
   import Dialog, { Actions } from '@smui/dialog';
   import { candidates } from '@/store/candidates';
   import { openAddItemFlg } from '@/store/modal';
+  import { type TInputValue } from '@/types';
 
   export let open = false;
 
-  let inputValue = '';
+  let inputValue: TInputValue = '';
 
   openAddItemFlg.subscribe(() => {
     open = $openAddItemFlg;
   });
 
-  function addItem(event) {
+  function addItem(event): void {
     event.stopPropagation();
 
     if (event.key === 'Enter') {
@@ -33,7 +34,7 @@
     }
   }
 
-  function handleClose(event) {
+  function handleClose(event): void {
     event.stopPropagation();
 
     $openAddItemFlg = false;

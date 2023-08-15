@@ -9,12 +9,12 @@
 
 <script lang="ts">
   import Chip, { Set, TrailingAction } from '@smui/chips';
-  import Dialog from '@/components/Candidates/Dialog.svelte';
+  import Dialog from '@/components/InputDialog/InputDialog.svelte';
   import { candidates } from '@/store/candidates';
 
   export let keyed:any = [];
 
-  function delChip(event: any, val: any) {
+  function delChip(event: any, val: any): void {
     event.stopPropagation();
     $candidates = $candidates.filter(item => item.k !== val.k);
   }

@@ -1,8 +1,8 @@
 <script>
+  import MapButton from '@/components/MapButton/MapButton.svelte';
+
   export let data;
   export let show;
-
-  import MapButton from '@/components/MapButton.svelte';
 </script>
 
 <div class="item">

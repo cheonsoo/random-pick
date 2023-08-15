@@ -8,8 +8,6 @@
 
 <script lang="ts">
   import Textfield from '@smui/textfield';
-
-  type TInputValue = string | number | ReadonlyArray<string>;
-
+  import { type TInputValue } from '@/types';
   let value: TInputValue = '';
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Chips from '@/components/Candidates/Chips.svelte';
+  import Chips from '@/components/Chips/Chips.svelte';
   import { candidates } from '@/store/candidates';
 </script>
 
