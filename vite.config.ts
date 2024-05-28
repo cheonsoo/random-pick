@@ -22,7 +22,7 @@ export default defineConfig({
   plugins: [
     svelte(),
     VitePWA({
-      base: 'http://static.devnology.co.kr/apps/randompick/',
+      base: 'https://static.devnology.co.kr/apps/randompick/',
       useCredentials: true,
       includeAssets: ['favicon.ico', 'favicon.svg','robots.txt','apple-touch-icon.png'],
       manifest: {
@@ -30,20 +30,20 @@ export default defineConfig({
         short_name: 'Random Pick',
         description: 'Random Pick',
         theme_color: '#ffffff',
-        start_url:"http://static.devnology.co.kr/apps/randompick/index.html",
+        start_url:"https://static.devnology.co.kr/apps/randompick/index.html",
         icons: [
           {
-            src: 'whatToEatToday-192x192.png',
+            src: 'randompick-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'whatToEatToday-512x512.png',
+            src: 'randompick-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
           {
-            src: 'whatToEatToday-512x512.png',
+            src: 'randompick-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable',
@@ -63,7 +63,7 @@ export default defineConfig({
   experimental: {
     renderBuiltUrl(filename: string, { hostId, hostType, type }: { hostId: string, hostType: 'js' | 'css' | 'html', type: 'public' | 'asset' }) {
       console.log('### filename: ', filename);
-      return 'http://static.devnology.co.kr/apps/randompick/' + filename;
+      return 'https://static.devnology.co.kr/apps/randompick/' + filename;
       /*
       if (type === 'public') {
         return 'http://static.devnology.co.kr/files/apps/whatToEatToday/' + filename
